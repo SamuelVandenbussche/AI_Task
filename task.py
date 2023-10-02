@@ -58,7 +58,7 @@ def solve_puzzle(puzzle):
 
 # Streamlit app title and description
 st.title("Cryptarithmetic Puzzle Solver")
-st.write("Enter a cryptarithmetic puzzle in the format 'TO + GO = OUT'.")
+st.write("Enter a cryptarithmetic puzzle in the format 'SEND + MORE = MONEY'.")
 
 # Input widget for the puzzle
 puzzle = st.text_input("Enter the puzzle:")
@@ -69,12 +69,25 @@ if st.button("Solve"):
         solution = solve_puzzle(puzzle)
         if solution:
             st.write("Solution:")
+            
+            # Display the solution with digits horizontally
+            st.write("Digits Solution: ", end="")
             for word in puzzle.split():
                 for char in word:
                     if char.isalpha():
                         st.write(solution[char], end=" ")
                     else:
                         st.write(char, end=" ")
-                st.write()
+            st.write()
+            
+            # Display the solution with letters horizontally
+            st.write("Letters Solution: ", end="")
+            for word in puzzle.split():
+                for char in word:
+                    if char.isalpha():
+                        st.write(char, end=" ")
+                    else:
+                        st.write(char, end=" ")
+            st.write()
         else:
             st.write("No solution found.")
