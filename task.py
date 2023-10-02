@@ -58,7 +58,7 @@ def solve_puzzle(puzzle):
 
 # Streamlit app title and description
 st.title("Cryptarithmetic Puzzle Solver")
-st.write("Enter a cryptarithmetic puzzle in the format 'SEND + MORE = MONEY'.")
+st.write("Enter a cryptarithmetic puzzle in the format 'TO + GO = OUT'.")
 
 # Input widget for the puzzle
 puzzle = st.text_input("Enter the puzzle:")
