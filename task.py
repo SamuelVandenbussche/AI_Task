@@ -70,24 +70,27 @@ if st.button("Solve"):
         if solution:
             st.write("Solution:")
             
-            # Display the solution with words beneath each other
+            # Display the solution with words horizontally beneath each other
             st.write("Digits Solution:")
+            digits_line = ""
             for word in puzzle.split():
                 for char in word:
                     if char.isalpha():
-                        st.write(solution[char], end=" ")
+                        digits_line += str(solution[char])
                     else:
-                        st.write(char, end=" ")
-                st.write()  # Move to the next line
+                        digits_line += char
+                st.write(digits_line)
+                digits_line = ""
             
-            # Display the solution with letters beneath each other
             st.write("Letters Solution:")
+            letters_line = ""
             for word in puzzle.split():
                 for char in word:
                     if char.isalpha():
-                        st.write(char, end=" ")
+                        letters_line += char
                     else:
-                        st.write(char, end=" ")
-                st.write()  # Move to the next line
+                        letters_line += char
+                st.write(letters_line)
+                letters_line = ""
         else:
             st.write("No solution found.")
