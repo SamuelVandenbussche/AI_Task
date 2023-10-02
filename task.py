@@ -1,7 +1,7 @@
 from simpleai.search import CspProblem, backtrack
 
 #de gebruiker voor een puzzel vragen en de input opsplitsen per spatie
-puzzle = st.text_input("geef een cryptarithmetic puzzle: ").upper()
+puzzle = input("geef een cryptarithmetic puzzle: ").upper()
 words = puzzle.split(" ")
 
 #de input valideren 
